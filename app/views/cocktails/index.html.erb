@@ -11,7 +11,7 @@
     <% @cocktails.each do |cocktail| %>
 
       <%= link_to cocktail do %>
-        <div class="card-category cocktail-grid-item" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo) %>)">
+        <div class="card-category cocktail-grid-item" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cocktail.photo.present? ? cl_image_path(cocktail.photo) : "https://hips.hearstapps.com/del.h-cdn.co/assets/16/17/1461680073-shot-1-113.jpg" %>);">
           <h1><%= cocktail.name %></h1>
         </div>
       <% end %>
