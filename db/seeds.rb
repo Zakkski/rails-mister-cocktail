@@ -7,8 +7,11 @@ ingredients['drinks'].each do |ingredient|
   Ingredient.create!(name: ingredient['strIngredient1'])
 end
 
-20.times do
-  cocktail = Cocktail.create!(name: Faker::Superhero.unique.power)
+10.times do
+  name = Faker::Name.unique.first_name
+  cocktail = Cocktail.new(name: name)
+  cocktail.remote_photo_url = "https://picsum.photos/200/300"
+  cocktail.save!
   rand(6..10).times do
     dose = Dose.new(description: Faker::Science.element)
     dose.cocktail = cocktail

@@ -1,5 +1,9 @@
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-    <%= f.input :ingredient_id, collection: Ingredient.all %>
-    <%= f.input :description %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="cocktail-form"><%= image_tag("ingredients") %>
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <%= f.input :ingredient_id, collection: Ingredient.all %>
+        <%= f.input :description %>
+        <%= f.submit %>
+    <% end %>
+  </div>
+</div>

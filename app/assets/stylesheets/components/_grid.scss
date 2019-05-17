@@ -1,0 +1,45 @@
+.cocktail-grid {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+.cocktail-grid a {
+  text-decoration: none;
+}
+
+.cocktail-grid-item {
+  transition: box-shadow .2s ease;
+}
+
+.cocktail-grid-item:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+}
+
+.ingredient-grid {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  color: #282828;
+}
+
+.ingredient-grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  background: white;
+  height: 125px;
+  border-radius: 4px;
+  h4 {
+    font-family: "Play";
+  }
+  p {
+    margin: 0;
+  }
+}

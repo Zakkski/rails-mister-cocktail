@@ -1,7 +1,21 @@
-<h1><%= @cocktail.name %></h1>
-<%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %>: <%= dose.description %> | <%= link_to "Delete",  dose_path(dose), method: :delete %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: url('<%= cl_image_path @cocktail.photo %>')">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ingredient-grid">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="ingredient-grid-item">
+        <h4><%= dose.ingredient.name %></h4>
+        <p><%= dose.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<!-- <#%= link_to "Delete",  dose_path(dose), method: :delete %> -->

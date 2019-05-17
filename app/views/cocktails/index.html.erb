@@ -1,15 +1,21 @@
 <div class="banner">
-  <div class="container">
-    <h1>Your Cocktail Bar</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <%= link_to "Create new drink", new_cocktail_path, class: "btn btn-primary" %>
-    <!-- <a class="btn btn-flat" href="#">Apply now</a> -->
+    <h1>Alcohol Of Fame</h1>
+    <br>
+    <p>Learn to drink and change your life</p>
+    <%= link_to "Add A Famous Drink", new_cocktail_path, class: "btn btn-primary" %> <br>
+  <h2>Drinks</h2>
+</div>
+
+<div class="container">
+  <div class="cocktail-grid">
+    <% @cocktails.each do |cocktail| %>
+
+      <%= link_to cocktail do %>
+        <div class="card-category cocktail-grid-item" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo) %>)">
+          <h1><%= cocktail.name %></h1>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
-<!-- <h1>Your Cocktail Bar</h1> -->
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail %></li>
-  <% end %>
-</ul>
