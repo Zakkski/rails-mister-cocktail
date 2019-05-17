@@ -8,7 +8,7 @@ ingredients['drinks'].each do |ingredient|
 end
 
 20.times do
-  cocktail = Cocktail.create!(name: Faker::Superhero.unique.name)
+  cocktail = Cocktail.create!(name: Faker::Superhero.unique.power)
   rand(6..10).times do
     dose = Dose.new(description: Faker::Science.element)
     dose.cocktail = cocktail
